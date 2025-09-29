@@ -1,0 +1,54 @@
+<div class="container mt-4">
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      <h5 class="mb-0">Add New Product</h5>
+    </div>
+
+    <div class="card-body">
+      <form [formGroup]="productForm" (ngSubmit)="onAddProduct()">
+        <div class="row g-3">
+
+          <!-- Name -->
+          <div class="col-md-6">
+            <label class="form-label">Name</label>
+            <input pInputText formControlName="name" class="form-control" placeholder="Enter product name" />
+          </div>
+
+          <!-- Brand -->
+          <div class="col-md-6">
+            <label class="form-label">Brand</label>
+            <input pInputText formControlName="brand" class="form-control" placeholder="Enter brand" />
+          </div>
+
+          <!-- Discounted Price -->
+          <div class="col-md-6">
+            <label class="form-label">Discounted Price</label>
+            <input pInputText type="number" formControlName="discountedPrice" class="form-control" placeholder="e.g. 110" />
+          </div>
+
+          <!-- Original Price -->
+          <div class="col-md-6">
+            <label class="form-label">Original Price</label>
+            <input pInputText type="number" formControlName="originalPrice" class="form-control" placeholder="e.g. 120" />
+          </div>
+
+          <!-- Weight -->
+          <div class="col-md-6">
+            <label class="form-label">Weight</label>
+            <input pInputText formControlName="weight" class="form-control" placeholder="e.g. 50 ml" />
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Image URL</label>
+            <input pInputText formControlName="imageUrl" class="form-control" placeholder="Enter image URL" />
+          </div>
+
+          <!-- Submit Button -->
+          <div class="mt-4 text-end">
+            <button pButton type="submit" label="Add Product" class="p-button-success" [disabled]="productForm.invalid"></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
